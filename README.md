@@ -30,7 +30,7 @@ collections:
 tasks:
   - name: Ansible | Get latest release
     set_fact:
-      ansible_version: "{{ lookup('artis3.github.latest_release', 'ansible/ansible')[1:] }}
+      ansible_version: "{{ lookup('artis3n.github.latest_release', 'ansible/ansible')[1:] }}
 ```
 
 Note: `[1:]` is used to strip out the `v` in the version tag, e.g. `v1.1.0` becomes `1.1.0`.
@@ -55,7 +55,7 @@ Example:
 tasks:
   - name: Ansible | Get latest release
     set_fact:
-      ansible_version: "{{ lookup('artis3.github.latest_release', 'ansible/ansible')[1:] }}
+      ansible_version: "{{ lookup('artis3n.github.latest_release', 'ansible/ansible')[1:] }}
 ```
 
 <br>
@@ -65,7 +65,7 @@ tasks:
 ```yaml
 - name: Terraform | Get latest release
   set_fact:
-    terraform_version: "{{ lookup('artis3.github.release_version', 'hashicorp/terraform')[1:] }}"
+    terraform_version: "{{ lookup('artis3n.github.latest_release', 'hashicorp/terraform')[1:] }}"
 
 - name: Terraform | Ensure directory
   file:
